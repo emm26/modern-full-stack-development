@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
-<html> 
+<!DOCTYPE html>
+<html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>Intro To React</title> 
-		<script src="./react.development.js"></script> 
+		<title>Intro To React</title>
+		<script src="./react.development.js"></script>
 		<script src="./react-dom.development.js"></script>
 
 		<script>
@@ -12,42 +12,42 @@
 				class Bookmark extends React.Component {
 					render() {
 						return(
-							React.createElement("li", { }, 
-								React.createElement("h2", { }, this.props.title),
+							React.createElement("li", { },
+								React.createElement("h2", { className : "bookMarkTitle"  }, this.props.title),
 								React.createElement("a", { href : this.props.href }, this.props.description)
 							)
 						);
 					}
 				}
 
-				const rootElement = 
-					React.createElement("div", { }, 
+				const rootElement =
+					React.createElement("div", { },
 						React.createElement("h1", { }, "Bookmarks"),
-						React.createElement("ul", { }, 
+						React.createElement("ul", { },
 							React.createElement(
-								Bookmark, { 
-									title : "Etherient", 
+								Bookmark, {
+									title : "Etherient",
 									href : "https://www.etherient.com",
 									description : "The home page of Etherient"
-								} 
+								}
 							),
 							React.createElement(
 								Bookmark, {
-									title : "Frank's Site", 
-									href : "https://www.zammetti.com", 
-									description : "The web home of Frank W. Zammetti" 
+									title : "Frank's Site",
+									href : "https://www.zammetti.com",
+									description : "The web home of Frank W. Zammetti"
 								}
 							)
-						) 
-					); 
+						)
+					);
 				ReactDOM.render(rootElement,
-					document.getElementById("mainContainer") 
+					document.getElementById("mainContainer")
 				);
 			}
-		</script> 
+		</script>
 
 	</head>
 	<body onLoad="start();">
 		<div id="mainContainer"></div>
-	</body> 
+	</body>
 </html>
